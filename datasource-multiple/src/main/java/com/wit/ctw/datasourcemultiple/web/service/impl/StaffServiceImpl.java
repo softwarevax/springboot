@@ -6,6 +6,8 @@ import com.wit.ctw.datasourcemultiple.web.service.StaffService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
 import java.util.List;
 
 /**
@@ -17,6 +19,12 @@ import java.util.List;
  */
 @Service
 public class StaffServiceImpl implements StaffService {
+
+    @PersistenceContext(unitName = "schoolPersistenceUnit")
+    EntityManager school;
+
+    @PersistenceContext(unitName = "socialPersistenceUnit")
+    EntityManager social;
 
     @Autowired
     StaffDao staffDao;

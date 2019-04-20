@@ -46,6 +46,7 @@ public class SchoolDataSource {
 		return builder.dataSource(schoolDataSource).properties(getVendorProperties(schoolDataSource))
 				// 设置实体类所在位置
 				.packages("com.wit.ctw.datasourcemultiple.web.entity.school")
+				//可用schoolPersistenceUnit进行自定义sql查询
 				.persistenceUnit("schoolPersistenceUnit").build();
 	}
 

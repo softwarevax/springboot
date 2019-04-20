@@ -9,7 +9,7 @@ import org.springframework.context.annotation.Configuration;
 import javax.sql.DataSource;
 
 /**
- * audit数据眼部配置
+ * school数据眼部配置
  */
 @Configuration
 public class SchoolDataSourceConfig {
@@ -20,6 +20,7 @@ public class SchoolDataSourceConfig {
 	 */
 	@Qualifier("school")
 	@Bean(name = "school")
+	//根据文件前缀，从属性文件中加载数据库配置
 	@ConfigurationProperties(prefix = "datasource.school")
 	public DataSource auditDataSource() {
 		return DataSourceBuilder.create().build();

@@ -20,7 +20,7 @@ import java.util.Map;
 
 /**
  *
- * staff数据源
+ * social数据源
  */
 @Configuration
 @EnableTransactionManagement
@@ -50,6 +50,7 @@ public class SocialDataSource {
 		return builder.dataSource(socialDataSource).properties(getVendorProperties(socialDataSource))
 				// 设置实体类所在位置
 				.packages("com.wit.ctw.datasourcemultiple.web.entity.social")
+				//可用socialPersistenceUnit进行自定义sql查询
 				.persistenceUnit("socialPersistenceUnit").build();
 	}
 

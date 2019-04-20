@@ -23,10 +23,10 @@ public class SocialDataSourceConfig {
 	@Primary
 	@Qualifier("social")
 	@Bean(name = "social")
+	//根据文件前缀，从属性文件中加载数据库配置
 	@ConfigurationProperties(prefix = "datasource.social")
 	public DataSource dataSource() {
 		DataSource dataSource = DataSourceBuilder.create().build();
 		return dataSource;
 	}
-
 }
