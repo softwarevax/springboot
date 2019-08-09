@@ -1,0 +1,2 @@
+org.springframework.boot.env.EnvironmentPostProcessor=com.wit.sb.studysb.web.config.HelloEnvironmentPostProcessor
+org.springframework.boot.env.PropertySourceLoader=com.wit.sb.studysb.web.config.HelloPropertySourceLoader
