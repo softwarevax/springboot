@@ -75,8 +75,8 @@
 				<configuration>
 					<overwrite>true</overwrite>
 					<!-- 配置多个，只有最后一个生效 -->
-					<configurationFile>src/main/resources/mybatis/generator-sc.xml</configurationFile>
 					<configurationFile>src/main/resources/mybatis/generator-sb.xml</configurationFile>
+					<configurationFile>src/main/resources/mybatis/generator-sc.xml</configurationFile>
 				</configuration>
 			</plugin>
 		</plugins>
