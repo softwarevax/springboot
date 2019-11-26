@@ -32,7 +32,11 @@ public class DataSource2Configure {
     @Value("${mybatis.sb.type-aliases-package}")
     private String typeAliasesPackage;
 
-    @Bean(name = "sbDataSource")
+    /**
+     * 加上close、init方法,否则driud的数据源会提示: (*) property for user to setup
+     * @return
+     */
+    @Bean(name = "sbDataSource", destroyMethod = "close", initMethod = "init")
     @ConfigurationProperties(prefix = "spring.datasource.sb")
     public DataSource getDateSource() {
         DataSource dataSource = DataSourceBuilder.create().type(dataSourceType).build();
